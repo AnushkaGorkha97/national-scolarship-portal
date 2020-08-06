@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 import com.lti.core.entities.Institute;
 
 @Entity(name="course")
-@Table(name="CourseTP7")
+@Table(name="CourseTP10")
 public class Course {
 	
 	@Id

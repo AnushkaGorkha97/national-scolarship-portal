@@ -18,8 +18,8 @@
 	<a href="studentlogout.hr" class="menu">LOGOUT</a>
 	</nav>
 	
-	<h1>JOB DETAILS</h1>
-	<table>
+	<h1 align="center">JOB DETAILS</h1>
+	<table align="center">
 	<tr>
 	<td align="right">INDUSTR NAME:</td>  <td align="left">${job.industryid.industryName}</td>
 	</tr> <br/>

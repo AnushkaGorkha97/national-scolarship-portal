@@ -70,20 +70,21 @@ function ageCount() {
 						title="Format: (e.g. Ankit Sharma)" autofocus autocomplete="off" required pattern="^\w+\s\w+$" style="width: 200px;"></td>
 				</tr>
 				<tr>
-					<td align="right">Email:</td>
-					<td><input type="email" name="studentEmail" value="${student.studentEmail}"
-						style="width: 200px;" id="contact_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required /></td>
+					<td align="right">Student Email:</td>
+					<td>
+						${student.studentEmail}
+					</td>
 				</tr>
 				
                 <tr>
 					<td align="right">Date Of Birth:</td>
-					<td><input type="date"  name="studentDob" value="${student.studentDob}"
+					<td><input type="text"  name="studentDob" value="${student.studentDob}"
 					style="width: 200px;" id="dob" onblur="ageCount()" required></td>
 				</tr>
 				<tr>
 					<td align="right">Age.:</td>
 					<td><input id="ageId" type="number" value="${student.studentAge}"
-						name="studentAge" style="width: 200px;" required></td>
+						name="studentAge" style="width: 200px;" required onkeydown="return false;"/></td>
 				</tr>
 				<tr>
 					<td align="right">Location:</td>
@@ -107,8 +108,8 @@ function ageCount() {
 				<tr>
 					<td align="right">Employed?:</td>
 					<td><select id="JobId" value="${student.jobId }"
-						name="jobId" onchange="optionCheck()" required>
-						<option value="">------------Choose------------</option>
+						name="jobId" onchange="optionCheck()" >
+						<option value="">---No need to fill if employed within portal---</option>
 						    <option value="1">YES</option>
 						    <option value="0">NO</option>
 							
@@ -123,13 +124,13 @@ function ageCount() {
 				<h3 align="center">10th Class</h3>
 				<tr>
 					<td align="right">Passing Year:</td>
-					<td><input id="passx" type="Number" value="${student.student10thYear}"
-						name="student10thYear" style="width: 200px;" required></td>
+					<td><input id="passx" type="month" value="${student.student10thYear}"
+						name="student10thYear" style="width: 200px;" min="1965-03" max="2017-03" required></td>
 				</tr>
 				<tr>
 					<td align="right">Passing %:</td>
-					<td><input id="perx" type="Number" value="${student.student10thPercentage}"
-						name="student10thPercentage" style="width: 200px;" required></td>
+					<td><input id="perx" type="Number" step="0.01" value="${student.student10thPercentage}"
+						name="student10thPercentage" style="width: 200px;" min="35.00" max="100.00" required></td>
 				</tr>
 			</table>
 			            <table id="table1" ; cellspacing="5px" cellpadding="5%"
@@ -138,13 +139,13 @@ function ageCount() {
 				
 				<tr>
 					<td align="right">Passing Year:</td>
-					<td><input id="passxii" type="Number" value="${student.student12thYear}"
-						name="student12thYear" style="width: 200px;" required></td>
+					<td><input id="passxii" type="month" value="${student.student12thYear}"
+						name="student12thYear" style="width: 200px;" min="1967-02" max="2019-02" required></td>
 				</tr>
 				<tr>
 					<td align="right">Passing %:</td>
-					<td><input id="perxii" type="Number" value="${student.student12thPercentage}"
-						name="student12thPercentage" style="width: 200px;" required></td>
+					<td><input id="perxii" type="Number" step="0.01" value="${student.student12thPercentage}"
+						name="student12thPercentage" style="width: 200px;" min="35.00" max="100.00" required></td>
 				</tr>
 				<tr>
 					<td align="right"><input type="checkbox" value="confirm" required>

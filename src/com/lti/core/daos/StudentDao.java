@@ -24,5 +24,6 @@ public interface StudentDao {
     public int accJobByStudentA(Student studentjid);
     public int accJobByStudentB(String studentAadharNo, String jobId);
     public int accJobByStudent0(Student studentjid, String appJobId);
+    public List<Completedcourse> listOfArchiveCoursesForStudent0(Student studentid);
 
 }

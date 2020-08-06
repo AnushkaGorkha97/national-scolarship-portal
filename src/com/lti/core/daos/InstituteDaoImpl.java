@@ -96,6 +96,16 @@ public class InstituteDaoImpl implements InstituteDao {
 		return 1;
 	}
 
+	@Override
+	public List<Course> getAccCoursesOnInstituteid0(Institute instituteid) {
+		String s="1";
+		Query qry7 = entityManager.createQuery("select c from course c where c.instituteid= :instituteid and c.courseAR= :s");
+		qry7.setParameter("instituteid",instituteid);
+		qry7.setParameter("s", s);
+		List<Course> courseStatusList0=qry7.getResultList();
+		return courseStatusList0;
+	}
+
 	
 
 	

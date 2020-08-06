@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Entity(name="institute")
-@Table(name="InstituteTP7")
+@Table(name="InstituteTP10")
 public class Institute {
 
 	@Id

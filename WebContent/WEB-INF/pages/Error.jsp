@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Error Page</title>
 </head>
 <body>
-GCFGHJKFGHJKASDFGHJ
+<h3>Something Went Wrong!!</h3>
 </body>
 </html>

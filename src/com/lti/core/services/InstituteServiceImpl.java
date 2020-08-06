@@ -88,6 +88,12 @@ public class InstituteServiceImpl implements InstituteService {
 		return certi;
 	}
 
+	@Override
+	public List<Course> getAccCoursesOnInstituteid1(Institute instituteid) {
+		List<Course> courseStatusList1=instituteDao.getAccCoursesOnInstituteid0(instituteid);
+		return courseStatusList1;
+	}
+
 	
 
 	

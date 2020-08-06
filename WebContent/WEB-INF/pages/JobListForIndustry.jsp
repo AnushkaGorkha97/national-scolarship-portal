@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
       <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,9 @@
 	
 <h3 align="center"> Job Posts</h3>
 <div class="container">
+<c:if test="${fn:length(jobList) < 1}">
+<h4>No Jobs Added By You</h4>
+</c:if>
 
 <c:forEach items="${jobList}" var="std">
 <table>

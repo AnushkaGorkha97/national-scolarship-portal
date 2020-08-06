@@ -27,5 +27,8 @@ public interface IndustryDao {
 	public int rejStudentByIndustry(Student studentjid, String appJobId);
 	public List<Jobapply> returnStudentHiredAccJob(String jobId);
 	public int delfinalFromJobapply0(Student studentjid);
+	public List<Completedcourse> studentListCompletedCourseUnemployed0(String compCourseId);
+	public int deleteJobPostA0(String jobId);
+	public int deleteJobPostB0(String appJobId);
 	
 }

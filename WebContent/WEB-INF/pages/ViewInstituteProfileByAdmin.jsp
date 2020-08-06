@@ -18,7 +18,7 @@
 	<nav id="navbar"> 
 		<a href="admindashboard.hr" class="menu">HOME</a> 
 		<a href="monitorinstitutes.hr" class="menu">GO BACK TO INSTITUTE LIST</a>
-		<a href="home.hr" class="menu">LOGOUT</a> 
+		<a href="adminlogout.hr" class="menu">LOGOUT</a> 
 	</nav>
 	
 	

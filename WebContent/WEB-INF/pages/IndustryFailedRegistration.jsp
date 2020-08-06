@@ -9,23 +9,28 @@
 <base href="/OnlinePortal/">
 <link href="resources/CSS/student-registration.css" rel="stylesheet">
 <script src="resources/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</script>
 </head>
-<body>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 
 <div class="header">
 		<img src="resources/images/logo.jpg" />
 	</div>
 	<nav id="navbar"> 
-		<a href="industrylogout.hr" class="menu">HOME</a> 
-		<a href="industrylogout.hr" class="menu">ABOUT US</a> 
-		<a href="industrylogout.hr" class="menu">CONTACT US</a> 
+		<a href="industrylogout1.hr" class="menu">HOME</a> 
+		<a href="industrylogout1.hr" class="menu">ABOUT US</a> 
+		<a href="industrylogout1.hr" class="menu">CONTACT US</a> 
 	</nav>
 
 
-<form action="industrylogout.hr" method="get">
+<form action="industrylogout1.hr" method="get">
 <h2 align="center">YOUR REGISTRATION IS FAILED DUE to INDUSTRY CODE ALREADY BEING REGISTERED!!</h2>
 <h2 align="center">TRY AGAIN!!</h2>
-<div class="button-layout">
+<div class="button-layout" align="center">
 				<button id="submit" align="center" type="submit">OK</button>
 				
 			</div>

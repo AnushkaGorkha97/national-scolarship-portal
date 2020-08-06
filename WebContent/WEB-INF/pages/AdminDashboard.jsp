@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Admin Dashboard</title>
 <link href="resources/CSS/StudentDashboard.css" rel="stylesheet">
+
+
+
 </head>
 <body>
 <div class="header">
@@ -16,7 +19,7 @@
 	<nav id="navbar"> 
 	<a href="admindashboard.hr" class="menu">HOME</a> 
 	
-	<a href="home.hr" class="menu">LOGOUT</a>
+	<a href="adminlogout.hr" class="menu">LOGOUT</a>
 	</nav>
 <h1 align="center">Welcome Admin</h1>
 <div class="container">

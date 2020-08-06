@@ -272,6 +272,9 @@ public class IndustryController {
 				System.out.println(industry);
 				
 				String industryCode=(String)session.getAttribute("indususerid");
+				Industry industry1=industryService.industryLogin1(industryCode);
+				String industryPassword=industry1.getIndustryPassword();
+				industry.setIndustryPassword(industryPassword);
 				industry.setIndustryCode(industryCode);
 			 
 				boolean editResult1 = industryService.editProfileForIndustry1(industry);
@@ -386,7 +389,8 @@ public class IndustryController {
 				public ModelAndView industryRegistration(@RequestParam("courseId") String courseId, HttpSession session){
 					String compCourseId=courseId;
 					try {
-						List<Completedcourse> stdList=industryService.returnsStudentList1(compCourseId);
+						List<Completedcourse> stdList=industryService.studentListCompletedCourseUnemployed0(compCourseId);
+					
 						String jsp="IndustryViewStudentAccCourse";
 						ModelAndView mAndV=new ModelAndView();
 						mAndV.addObject("stdList", stdList);
@@ -692,14 +696,33 @@ public ModelAndView sendAttachment(HttpSession session, HttpServletRequest reque
 }
 
 
+//deleting Job Posts
+@RequestMapping(path="/viewjobtodelete.hr")
+public ModelAndView viewJobToDelete(HttpSession session) {
+String industryCode=(String)session.getAttribute("indususerid");
+Industry industryid=industryService.industryLogin1(industryCode);
+List<Job> jobList=industryService.ViewAccJob1(industryid);
 
 
-
-
-
-
-
-
+String jsp="ListOfJobToDelete";
+ModelAndView mAndV=new ModelAndView();
+mAndV.addObject("jobList", jobList);
+mAndV.setViewName(jsp);
+return mAndV;
+}
+@RequestMapping(path="/deletejob.hr")
+public String deleteJob(HttpSession session, @RequestParam("appJobId") String appJobId) {
+String jobId=appJobId;
+List<Jobapply> List=industryService.returnStudentHiredAccJob1(jobId);
+if(List.isEmpty()) {
+int result1=industryService.deleteJobPostA1(jobId);
+int result2=industryService.deleteJobPostB1(appJobId);
+return "SuccessfullyDeletedJobPost";
+}else {
+	
+	return "CantDeleteJobPost";
+}
+}
 
 
 
@@ -719,8 +742,19 @@ public ModelAndView sendAttachment(HttpSession session, HttpServletRequest reque
 		
 		
 				/// Industry LOGOUT
-				@RequestMapping(path="/industrylogout.hr", method=RequestMethod.GET)
-				public String industryLogout(HttpSession session){
+@RequestMapping(path="/industrylogout.hr", method=RequestMethod.GET)
+public ModelAndView industryLogout(HttpSession session){
+	String industryCode=(String)session.getAttribute("indususerid");
+    Industry industry=industryService.industryLogin1(industryCode);
+	String jspName= "IndustryLogout";
+	ModelAndView mAndV=new ModelAndView();
+	mAndV.addObject("industry",industry);
+	mAndV.setViewName(jspName);
+	return mAndV;
+
+}	
+				@RequestMapping(path="/industrylogout1.hr", method=RequestMethod.GET)
+				public String industryLogout1(HttpSession session){
 					session.removeAttribute("indususerid");
 				    session.removeAttribute("loggedindustry");
 			        session.invalidate();

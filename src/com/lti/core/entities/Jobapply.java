@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity(name="jobapply")
-@Table(name="JobapplyTP8")
+@Table(name="JobapplyTP10")
 public class Jobapply {
 	
 	@Id

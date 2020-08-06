@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
       <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -23,14 +24,16 @@
 	
 <h3 align="center">All  STUDENTS </h3>
 <div class="container">
-
+<c:if test="${fn:length(stdList) < 1}">
+<h4>No Students Completing The Course</h4>
+</c:if>
 <c:forEach items="${stdList}" var="std">
 
-<c:set var = "cstatu" scope = "session" value = "${std.studentid.jobId}"/>
 
-  <c:if test = "${cstatu == 0}">
+ 
 
 <table>
+
 <tr>
 
 <td aligh="left">STUDENT AADHAR NO:</td> <td>${std.studentid.studentAadharNo}</td>
@@ -46,8 +49,11 @@
 <td><a href="viewstudentprofile.hr?studentAadharNo=${std.studentid.studentAadharNo}&courseId=${std.compCourseId}"> View Profile</a></td>
 
 </tr>
+
+
+<br/>
 </table>
-</c:if>
+
 </c:forEach>
 </body>
 

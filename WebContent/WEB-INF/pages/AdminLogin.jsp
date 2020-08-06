@@ -7,8 +7,13 @@
 <title>Institute Login</title>
 
 <link href="resources/CSS/login.css" rel="stylesheet">
+<script type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</script>
 </head>
-<body>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <div class="header">
 		<img src="resources/images/logo.jpg" />
 	</div>

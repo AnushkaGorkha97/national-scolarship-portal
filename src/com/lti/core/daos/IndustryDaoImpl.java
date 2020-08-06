@@ -240,6 +240,45 @@ public class IndustryDaoImpl implements IndustryDao {
 
 
 
+
+	@Override
+	public List<Completedcourse> studentListCompletedCourseUnemployed0(String compCourseId) {
+		String g="1";
+		String o="0";
+		Query qry15=entityManager.createQuery("select cc from completedcourse cc where cc.compCourseId= :compCourseId and cc.studentid.jobId= :o and cc.compCertification= :g");
+	    qry15.setParameter("compCourseId", compCourseId);
+	    qry15.setParameter("g", g);
+	    qry15.setParameter("o", o);
+	    List<Completedcourse> stdList0=qry15.getResultList();
+	    return stdList0;
+	}
+
+
+
+
+	@Override
+	public int deleteJobPostA0(String jobId) {
+		String j="4";
+		Query qry16=entityManager.createQuery("update job j set j.jobAR= :j where j.jobId= :jobId");
+		qry16.setParameter("j", j);
+		qry16.setParameter("jobId", jobId);
+		qry16.executeUpdate();
+		return 1;
+	}
+
+
+
+
+	@Override
+	public int deleteJobPostB0(String appJobId) {
+		Query qry17=entityManager.createQuery("delete from jobapply ja where ja.appJobId= :appJobId");
+		qry17.setParameter("appJobId", appJobId);
+		qry17.executeUpdate();
+		return 1;
+	}
+
+
+
  
 
 }

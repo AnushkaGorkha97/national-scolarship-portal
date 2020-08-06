@@ -1,6 +1,6 @@
-<<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
      <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -17,12 +17,14 @@
 	<nav id="navbar"> 
 	<a href="admindashboard.hr" class="menu">HOME</a> 
 	
-	<a href="home.hr" class="menu">LOGOUT</a>
+	<a href="adminlogout.hr" class="menu">LOGOUT</a>
 	</nav>
 	
 <h3 align="center">All Students</h3>
 <div class="container">
-
+<c:if test="${fn:length(studentList) < 1}">
+<h4>No Students Registered Yet</h4>
+</c:if>
 <c:forEach items="${studentList}" var="std">
 <table>
 <tr>
@@ -45,4 +47,4 @@
 </body>
 
 
-</html>>
+</html>

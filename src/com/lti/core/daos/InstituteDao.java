@@ -18,4 +18,5 @@ public interface InstituteDao {
 	public int updateCourseStatusByInstitute0(Institute instituteid);
 	public List<Completedcourse> viewStudentsForCertification0(String compId);
 	public int instituteCertifiesStudent0(String compId, Student stdentid);
+	public List<Course> getAccCoursesOnInstituteid0(Institute instituteid);
 }

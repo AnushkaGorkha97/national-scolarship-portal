@@ -141,6 +141,24 @@ public class IndustryServiceImpl implements IndustryService {
 		return 1;
 	}
 
+	@Override
+	public List<Completedcourse> studentListCompletedCourseUnemployed0(String compCourseId) {
+		List<Completedcourse> stdList1=industryDao.studentListCompletedCourseUnemployed0(compCourseId);
+		return stdList1;
+	}
+
+	@Override
+	public int deleteJobPostA1(String jobId) {
+		int res1=industryDao.deleteJobPostA0(jobId);
+		return res1;
+	}
+
+	@Override
+	public int deleteJobPostB1(String appJobId) {
+	int res2=industryDao.deleteJobPostB0(appJobId);
+		return res2;
+	}
+
 	
 
 }

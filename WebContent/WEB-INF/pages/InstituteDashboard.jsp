@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Institute Dashboard</title>
 <link href="resources/CSS/StudentDashboard.css" rel="stylesheet">
+
+
+
 </head>
 <body>
 <div class="header">

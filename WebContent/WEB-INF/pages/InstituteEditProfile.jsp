@@ -41,7 +41,7 @@
 	            <tr>
 					<td align="right">Email:</td>
 					<td><input type="email" name="instituteEmail" value="${institute.instituteEmail}"
-						style="width: 200px;" id="contact_email" title="Format: (e.g. name@gmail.com)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required /></td>
+						style="caret-color: transparent !important; width: 200px;" id="contact_email" title="Format: (e.g. name@gmail.com)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  required onkeydown="return false;"/></td>
 				</tr>
 				<tr>
 						<td align="right">University Contact Number:</td>

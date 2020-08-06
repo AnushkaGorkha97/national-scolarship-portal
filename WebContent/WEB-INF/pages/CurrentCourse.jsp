@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Current Course</title>
 <base href="/OnlinePortal/">
 <link href="resources/CSS/student-registration.css" rel="stylesheet">
 <script src="resources/jquery-3.4.1.js"></script>

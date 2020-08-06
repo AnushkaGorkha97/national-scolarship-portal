@@ -17,4 +17,5 @@ public interface InstituteService {
 	public int updateCourseStatusByInstitute1(Institute instituteid);
 	public List<Completedcourse> viewStudentsForCertification1(String compId);
 	public int instituteCertifiesStudent1(String compId, Student studentid);
+	public List<Course> getAccCoursesOnInstituteid1(Institute instituteid);
 }

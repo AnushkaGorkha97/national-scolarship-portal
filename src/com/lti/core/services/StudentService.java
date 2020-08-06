@@ -26,5 +26,6 @@ public interface StudentService {
     public int accJobByStudentA1(Student studentjid);
     public int accJobByStudentB1(String studentAadharNo, String jobId);
     public int accJobByStudent1(Student studentjid, String appJobId);
+    public List<Completedcourse> listOfArchiveCoursesForStudent1(Student studentid);
 
 }

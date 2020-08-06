@@ -278,6 +278,9 @@ return "InstituteSetPass";
 	System.out.println(institute);
 	
 	String instituteCode=(String)session.getAttribute("instuserid");
+	Institute institute1=instituteService.instituteLogin1(instituteCode);
+	String institutePassword=institute1.getInstitutePassword();
+	institute.setInstitutePassword(institutePassword);
 	institute.setInstituteCode(instituteCode);
  
 	boolean editResult1 = instituteService.editProfileForInstitute1(institute);
@@ -339,6 +342,7 @@ return "InstituteSetPass";
 		boolean addcourseresult=instituteService.insertNewCourse1(course, instituteid);
 	
 	Institute institute=instituteService.instituteLogin1(instituteCode);
+		/* session.removeAttribute("course1"); */
 	String jsp="InstituteDashboard";
 	ModelAndView mAndV=new ModelAndView();
 	mAndV.addObject("institute", institute);
@@ -405,7 +409,7 @@ return "InstituteSetPass";
 		try {
 			String instituteCode=(String)session.getAttribute("instuserid");
 			Institute instituteid=instituteService.instituteLogin1(instituteCode);
-			List<Course> courseList=instituteService.viewCourseStatus1(instituteid);
+			List<Course> courseList=instituteService.getAccCoursesOnInstituteid1(instituteid);
 			String jspName="CourseListForStudentCertification";
 			ModelAndView mAndV=new ModelAndView();
 			mAndV.addObject("courseList", courseList);
@@ -532,7 +536,19 @@ return "InstituteSetPass";
 	
 	/// Institute LOGOUT
 	@RequestMapping(path="/institutelogout.hr", method=RequestMethod.GET)
-	public String instituteLogout(HttpSession session){
+	public ModelAndView instituteLogout(HttpSession session){
+		String instituteCode=(String)session.getAttribute("instuserid");
+		
+		Institute institute = instituteService.instituteLogin1(instituteCode);
+		String jspName= "InstituteLogout";
+		ModelAndView mAndV=new ModelAndView();
+		mAndV.addObject("institute",institute);
+		mAndV.setViewName(jspName);
+		return mAndV;
+
+	}	
+	@RequestMapping(path="/institutelogout1.hr", method=RequestMethod.GET)
+	public String instituteLogout1(HttpSession session){
 		session.removeAttribute("instuserid");
 	    session.removeAttribute("loggedinstitute");
         session.invalidate();

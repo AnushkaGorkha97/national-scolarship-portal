@@ -138,6 +138,13 @@ public class StudentServiceImpl implements StudentService {
 		return acc0;
 	}
 
+
+	@Override
+	public List<Completedcourse> listOfArchiveCoursesForStudent1(Student studentid) {
+		List<Completedcourse> courseList1=studentDao.listOfArchiveCoursesForStudent0(studentid);
+		return courseList1;
+	}
+
 	
 	
 }

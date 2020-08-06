@@ -8,22 +8,15 @@ xmlns="http://www.w3.org/1999/xhtml">
 <title>OTP VERIFICATION</title>
 <base href="/OnlinePortal/">
 <link href="resources/CSS/student-registration.css" rel="stylesheet">
+
+<script type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</script>
+
 <script src="resources/jquery-3.4.1.js"></script>
 
-<script>
-	/* function validate() {
-		console.log("HELLO"
-				var o = document.getElementById('otp').value;
-				if (otp == '') {
-					document.getElementById('error-studentOtp').innerHTML = "This Field Cannot Be Blank!!";
-					return false
-				
-				} else {
-					return true
-				}
-		
-		)} */
-	
+<script tyype="text/javascript">
 	
 	<%
 	String clock = request.getParameter("clock");
@@ -53,19 +46,22 @@ xmlns="http://www.w3.org/1999/xhtml">
 	
 	</script>
 </head>
-<body>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 
 <div class="header">
 		<img src="resources/images/logo.jpg"/>
 	</div>
 <form action="industryotpforforgotpass.hr" method="post" name="forma" >
-	<!-- onsubmit="return ((validate())" -->
-	<h2 align="center">OTP VERIFICATION</h2>
-	Time Remaining: <input type="text" name="clock" value="<%=clock%>" style="width: 200px;>
+	
+	<h2 align="center">OTP VERIFICATION</h2><br/>
+
 <div class="card-layout">
+Time Remaining: <input type="text" align="center" name="clock" value="<%=clock%>" style="width: 200px;">
+<br/><br/>
 			<table id="table1" ; cellspacing="5px" cellpadding="5%"
 				; align="center">
-				
+				<br/><br/>
 				
 				<tr>
 					<td align="center">Enter OTP:</td>
@@ -73,8 +69,8 @@ xmlns="http://www.w3.org/1999/xhtml">
 						name="industryOtp" id="otp"  required></td>
 				</tr>
 				</table>
-				
-				<div class="button-layout">
+				<br/><br/><br/><br/>
+				<div class="button-layout" align="center">
 				<button id="submit" type="submit" align="center">Submit</button>
 				</div>  </div>
 				

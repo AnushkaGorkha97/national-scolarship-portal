@@ -16,9 +16,10 @@
 	<a href="returnstudentdashboard.hr" class="menu">HOME</a> 
 
 	<a href="studentlogout.hr" class="menu">LOGOUT</a>
-	<h1>EMPLOYMENT DETAILS</h1>
+
 	</nav>
-	<table>
+	<h1 align="center">EMPLOYMENT DETAILS</h1>
+	<table align="center">
 	<tr>
 	<td align="right">EMPLOYED AT:</td>  <td align="left">${job.industryid.industryName}</td>
 	</tr> <br/>

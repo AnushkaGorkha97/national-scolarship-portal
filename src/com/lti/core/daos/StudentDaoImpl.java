@@ -8,6 +8,7 @@ import com.lti.core.entities.Jobapply;
 import com.lti.core.entities.Student;
 import com.lti.core.exceptions.ScholarException;
 
+import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -53,7 +54,8 @@ public class StudentDaoImpl implements StudentDao{
 
 	@Override
 	public int editProfileForStudent0(Student student) {
-		entityManager.merge(student);
+	
+		 entityManager.merge(student); 
 		return 1;
 	
 	}
@@ -161,6 +163,14 @@ public class StudentDaoImpl implements StudentDao{
 	qry12.setParameter("appJobId", appJobId);
 	qry12.executeUpdate();
 	return 1;
+	}
+
+	@Override
+	public List<Completedcourse> listOfArchiveCoursesForStudent0(Student studentid) {
+		Query qry13=entityManager.createQuery("select cc from completedcourse cc where cc.studentid= :studentid");
+		qry13.setParameter("studentid", studentid);
+		List<Completedcourse> courseList0=qry13.getResultList();
+		return courseList0;
 	}
 
 	

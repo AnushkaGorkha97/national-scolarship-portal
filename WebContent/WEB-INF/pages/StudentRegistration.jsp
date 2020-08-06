@@ -9,6 +9,7 @@
 <link href="resources/CSS/student-registration.css" rel="stylesheet">
 <script src="resources/jquery-3.4.1.js"></script>
 <!--script src="resources/JS/student-registration.js"></script-->
+
 <script type="text/javascript">
 function ageCount() {
     var date1 = new Date();
@@ -32,7 +33,7 @@ function ageCount() {
         	return false;
         }
     } else {
-        alert("Invalid date format. Please Input in (dd/mm/yyyy) format!");
+        alert("Invalid date format. Please Input in (dd-mm-yyyy) format!");
         return false;
     }
 
@@ -77,14 +78,14 @@ function ageCount() {
 				
                 <tr>
 					<td align="right" >Date Of Birth:</td>
-					<td><input type="date"  name="studentDob" placeholder="DD/MM/YY"
-					style="width: 200px;" id="dob" onblur="ageCount()" required></td>
+					<td><input type="text"  name="studentDob"  placeholder="DD/MM/YY"
+					style="width: 200px;" id="dob" onblur="ageCount()"  required></td>
 				</tr>
 				
 				<tr>
 					<td align="right">Age.:</td>
-					<td><input id="ageId" type="number"
-						name="studentAge" style="width: 200px;" required></td>
+					<td><input id="ageId" type="number" 
+						name="studentAge" style="caret-color: transparent !important; width: 200px;" required onkeydown="return false;"/></td>
 				</tr>
 				
 				<tr>
@@ -133,13 +134,13 @@ function ageCount() {
 				<h3 align="center">10th Class</h3>
 				<tr>
 					<td align="right">Passing Year:</td>
-					<td><input id="passx" type="Number" placeholder="YYYY"
-						name="student10thYear" style="width: 200px;" title="Format: (e.g. YYYY )" pattern="^\d{4}$" required></td>
+					<td><input id="passx" type="month" 
+						name="student10thYear" style="width: 200px;" min="1965-03" max="2017-03" required></td>
 				</tr>
 				<tr>
 					<td align="right">Passing %:</td>
-					<td><input id="perx" type="text"
-						name="student10thPercentage" style="width: 200px;" required></td>
+					<td><input id="perx" type="Number" step="0.01"
+						name="student10thPercentage" style="width: 200px;" min="35.00" max="100.00" required></td>
 				</tr>
 			</table>
 			            <table id="table1" ; cellspacing="5px" cellpadding="5%"
@@ -148,49 +149,30 @@ function ageCount() {
 				
 				<tr>
 					<td align="right">Passing Year:</td>
-					<td><input id="passxii" type="text" placeholder="YYYY"
-						name="student12thYear" style="width: 200px;" title="Format: (e.g. YYYY )" pattern="^\d{4}$" required></td>
+					<td><input id="passxii" type="month" 
+						name="student12thYear" style="width: 200px;" min="1967-02" max="2019-02" required></td>
 				</tr>
 				<tr>
 					<td align="right">Passing %:</td>
-					<td><input id="perxii" type="Number"
-						name="student12thPercentage" style="width: 200px;" required></td>
+					<td><input id="perxii" type="Number" step="0.01"
+						name="student12thPercentage" style="width: 200px;" min="35.00" max="100.00" required></td>
 				</tr>
 			</table>
 				
 			
-				
-				<!-- <tr>
-					<td align="right">Set your Password:</td>
-					<td><input type="password" style="width: 200px;"
-						name="studentPassword" id="set_pass" pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required /></td>
-				</tr>
-				
+				<br/><br/>
 				<tr>
-					<td align="right">Confirm your Password:</td>
-					<td><input type="password" style="width: 200px;"
-						name="confpassword" id="conf_pass" onkeyup="confirmpasswordFunction();" 
-						onchange="confirmpasswordFunction();" required />
-				</tr>
-				<tr>
-					
-					<td align="right">Password Validation: </td>
-					<td align="right"><p id="confirmError"></p></td>
-					
-				
-				</tr> -->
-				<tr>
-					<td align="right"><input type="checkbox" value="confirm" required>
+					<td ><input type="checkbox" value="confirm" required>
 					</td>
-					<td>ALL THE INFORMATION FURNISHED BY ME <br> IS TRUE TO
+					<td>ALL THE INFORMATION FURNISHED BY ME IS TRUE TO
 						BEST OF MY KNOWLEDGE.
 					</td>
 				</tr>
-
+<br/><br/>
 			</table>
-			<div class="button-layout">
-				<button id="submit" type="submit">Submit</button>
-				<button id="reset" type="reset">Reset</button>
+			<div class="button-layout" >
+				<button id="submit" align="right" type="submit">Submit</button>
+				<button id="reset" align="left" type="reset">Reset</button>
 			</div>
 		</div>
 

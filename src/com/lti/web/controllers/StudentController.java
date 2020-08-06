@@ -266,7 +266,27 @@ public class StudentController {
 			public String studentEditProfile1(Model model, HttpSession session, Student student) {
 			System.out.println(student);
 			String studentAadharNo=(String)session.getAttribute("userid");
+			Student student1=studentService.studentLogin1(studentAadharNo);
+			String studentEmail=student1.getStudentEmail();
+			String studentPassword=student1.getStudentPassword();
+			String studentCourseId=student1.getStudentCourseId();
+			String studentCourseStatus=student1.getStudentCourseStatus();
+			String studentCourseName=student1.getStudentCourseName();
+			if(student.getJobId()=="")
+			{String jobId=student1.getJobId();
+			student.setJobId(jobId);
+				System.out.println("nulllllll"+jobId);
+			}
+				
+		
+			
+			student.setStudentPassword(studentPassword);
 		 student.setStudentAadharNo(studentAadharNo);
+		 student.setStudentEmail(studentEmail);
+		 student.setStudentCourseId(studentCourseId);
+		 student.setStudentCourseStatus(studentCourseStatus);
+		
+		 student.setStudentCourseName(studentCourseName);
 			boolean editResult1 = studentService.editProfileForStudent1(student);
 			if(editResult1)
 			return "StudentDashboard";
@@ -315,7 +335,7 @@ public class StudentController {
 					
 		try {
 			Completedcourse check=studentService.CheckStudentapplyingSameCourse1(compCourseId, studentid);
-			return "StudentCourseCantApply";
+			return "StudentCourseCantApply2";
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -427,7 +447,13 @@ public class StudentController {
 				mAndV.addObject(jobList);
 				mAndV.setViewName(jsp);
 				return mAndV;
-				} else {String jsp="AlreadyEmployed";
+				} else if(student.getJobId().contentEquals("1")) {
+					String jsp="EmpFromOut";
+					ModelAndView mAndV=new ModelAndView();
+					mAndV.setViewName(jsp);
+			        return mAndV;	
+				} else {
+				String jsp="AlreadyEmployed";
 				ModelAndView mAndV=new ModelAndView();
 				mAndV.setViewName(jsp);
 				return mAndV;
@@ -574,7 +600,34 @@ public class StudentController {
 			}		
 			
 			
-			
+///Viewing Archived Courses By Student
+			@RequestMapping(path="/viewarchivecoursebystudent.hr")
+			public ModelAndView studentViewArchiveCourses(HttpSession session) {
+            String studentAadharNo=(String)session.getAttribute("userid");
+				Student studentid=studentService.studentLogin1(studentAadharNo);
+				List<Completedcourse> courseList=studentService.listOfArchiveCoursesForStudent1(studentid);
+				String jsp="StudentArchiveCourseList";
+				ModelAndView mAndV=new ModelAndView();
+				mAndV.addObject("courseList", courseList);
+				mAndV.setViewName(jsp);
+				return mAndV;
+				
+				
+				
+			}	
+			@RequestMapping(path="/archivecourselink.hr")
+			public ModelAndView studentViewArchiveCourseLink(HttpSession session, @RequestParam("courseId") String courseId) {
+				
+		    Course course=studentService.returnCourseOnId1(courseId);
+			String jsp="ArchiveCourseVideo";
+			ModelAndView mAndV=new ModelAndView();
+			mAndV.addObject("course", course);
+			mAndV.setViewName(jsp);
+			return mAndV;
+				
+				
+				
+			}		
 			
 			
 			
@@ -592,7 +645,20 @@ public class StudentController {
 			
 			/// STUDENT LOGOUT
 			@RequestMapping(path="/studentlogout.hr", method=RequestMethod.GET)
-			public String studentLogout(HttpSession session){
+			public ModelAndView studentLogout(HttpSession session){
+				
+				String studentAadharNo=(String)session.getAttribute("userid");
+				
+				Student student=studentService.studentLogin1(studentAadharNo);
+				String jspName= "StudentLogout";
+				ModelAndView mAndV=new ModelAndView();
+				mAndV.addObject("student",student);
+				mAndV.setViewName(jspName);
+				return mAndV;
+	
+			}
+			@RequestMapping(path="/studentlogout1.hr", method=RequestMethod.GET)
+			public String studentLogout1(HttpSession session){
 				session.removeAttribute("userid");
 				
 		session.invalidate();

@@ -10,8 +10,15 @@
 <base href="/OnlinePortal/">
 <link href="resources/CSS/student-registration.css" rel="stylesheet">
 <script src="resources/jquery-3.4.1.js"></script>
+
+<script type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</script>
+
 </head>
-<body>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <div class="header">
 		<img src="resources/images/logo.jpg" />
 	</div>
@@ -68,12 +75,7 @@
 						${student.studentAddress}
 					</td>
 				</tr>
-				<tr>
-					<td align="right">Student Email:</td>
-					<td>
-						${student.studentEmail}
-					</td>
-				</tr>
+				
 				<tr>
 					<td align="right">Student Gender:</td>
 					<td>
@@ -134,7 +136,7 @@
 	  
 	  
 	<a align="right" href="accstudentapplyjob.hr?jobId=${jobId}&studentAadharNo=${student.studentAadharNo}">ACCEPT</a>
-	<a align="left" href="rejstudentapplyjob.hr?jobId=${jobId}&studentAadharNo=${student.studentAadharNo}">Reject</a>
+	<a align="left" href="rejstudentapplyjob.hr?jobId=${jobId}&studentAadharNo=${student.studentAadharNo}">REJECT</a>
 				
 				</div>
 				

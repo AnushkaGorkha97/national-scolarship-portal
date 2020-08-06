@@ -30,5 +30,8 @@ public interface IndustryService {
 	public int rejStudentByIndustry1(Student studentjid, String appJobId);
 	public List<Jobapply> returnStudentHiredAccJob1(String jobId);
 	public int delfinalFromJobapply1(Student studentjid);
+	public List<Completedcourse> studentListCompletedCourseUnemployed0(String compCourseId);
+	public int deleteJobPostA1(String jobId);
+	public int deleteJobPostB1(String appJobId);
 
 }

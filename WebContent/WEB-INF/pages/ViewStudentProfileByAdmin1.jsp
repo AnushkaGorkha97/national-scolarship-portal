@@ -18,7 +18,7 @@
 	<nav id="navbar"> 
 		<a href="admindashboard.hr" class="menu">HOME</a> 
 		<a href="monitorstudent.hr" class="menu">GO BACK TO STUDENT LIST</a> 
-		<a href="home.hr" class="menu">LOGOUT</a> 
+		<a href="adminlogout.hr" class="menu">LOGOUT</a> 
 	</nav>
 	
 	
@@ -68,12 +68,7 @@
 						${student.studentAddress}
 					</td>
 				</tr>
-				<tr>
-					<td align="right">Student Email:</td>
-					<td>
-						${student.studentEmail}
-					</td>
-				</tr>
+				
 				<tr>
 					<td align="right">Student Gender:</td>
 					<td>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
       <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -22,11 +23,13 @@
 	
 <h3 align="center">Students Applied For This Job Post</h3>
 <div class="container">
-
+<c:if test="${fn:length(jobapplyList) < 1}">
+<h4>No Students Applied For The Jobs</h4>
+</c:if>
 <c:forEach items="${jobapplyList}" var="std">
 <table>
 <tr>
-<td aligh="left">STUDENT Aadhar:</td> <td>${std.studentjid.studentAadharNo}</td>
+<td aligh="left">STUDENT AADHAR:</td> <td>${std.studentjid.studentAadharNo}</td>
 </tr>
 
 <tr>

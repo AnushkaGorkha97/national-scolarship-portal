@@ -7,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Industry Dashboard</title>
 <link href="resources/CSS/StudentDashboard.css" rel="stylesheet">
+
+
+
 </head>
 <body>
 <div class="header">
@@ -70,29 +73,17 @@
 				<button id="submit" type="submit" >Send OFFER LETTER TO HIRED STUDENTS</button>
 				</div>
 				</form>
-				</tr>   
-               <!--
-                <tr>
-			    <form action="viewcoursestatus.hr">
-	            <div align="center" class="button-layout">
-				<button id="submit" type="submit" >VIEW COURSE STATUS
-				</button>
-				</div>
-				</form>
-				</tr>
-				
-				<br/> <br/>
-				
+				</tr> 
+
+	<br/><br/>   
 				<tr>
-			    <form action="studentcertification.hr">
+				<form action="viewjobtodelete.hr">
 	            <div align="center" class="button-layout">
-				<button id="submit" type="submit" >STUDENT CERTIFICATION
-				</button>
+				<button id="submit" type="submit" >Delete Job Posts</button>
 				</div>
 				</form>
-				</tr>
-				
-				-->
+				</tr>    
+            
 			</table> 
 </div>
 

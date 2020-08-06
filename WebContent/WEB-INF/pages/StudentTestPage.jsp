@@ -8,8 +8,17 @@
 <base href="/OnlinePortal/">
 <link href="resources/CSS/student-registration.css" rel="stylesheet">
 <script src="resources/jquery-3.4.1.js"></script>
+
+
+
+<script type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</script>
 </head>
-<body>
+</head>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <div class="header">
 		<img src="resources/images/logo.jpg" />
 	</div>

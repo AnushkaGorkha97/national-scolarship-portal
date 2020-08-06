@@ -41,7 +41,7 @@ public class AdminController {
 	public String adminLoginPage(){
 		return "AdminLogin";
 	}
-	@RequestMapping(path="/admindashboard.hr", method=RequestMethod.GET)
+	@RequestMapping(path="/admindashboard.hr")
 	public String adminDashboard(){
 		return "AdminDashboard";
 	}
@@ -49,7 +49,7 @@ public class AdminController {
 	public String adminLogin(@RequestParam("adminId") String adminId, @RequestParam("adminPassword") String adminPassword){
 		
 		String adminid = "Admin";
-		String adminpass = "Admin";
+		String adminpass = "Anushkaa";
 		
 		if(adminId.contentEquals(adminid) && adminPassword.contentEquals(adminpass)) {
 		return "AdminDashboard";}
@@ -409,9 +409,15 @@ public class AdminController {
 				}
 		
 		
+			@RequestMapping(path="/adminlogout.hr")
+			public String adminLogout(){
+				return "AdminLogout";
+			}
 		
-		
-		
+			@RequestMapping(path="/adminlogout1.hr")
+			public String adminLogout1(){
+				return "Home";
+			}
 		
 
 }

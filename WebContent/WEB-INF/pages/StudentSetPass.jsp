@@ -10,6 +10,11 @@
 <script src="resources/jquery-3.4.1.js"></script>
 
 <script type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</script>
+
+<script type="text/javascript">
 
 
 function validate() {
@@ -49,7 +54,8 @@ function confirmpasswordFunction() {
 </script>
 
 </head>
-<body>
+<body onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <div class="header">
 		<img src="resources/images/logo.jpg" />
 	</div>
@@ -64,7 +70,7 @@ function confirmpasswordFunction() {
 				; align="center">
 				
 				
-				<<tr>
+				<tr>
 					<td align="right">Set your Password:</td>
 					<td><input type="password" style="width: 200px;"
 						name="studentPassword" id="set_pass" pattern="(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Password min 8 characters. At least one UPPERCASE and one lowercase letter" required /></td>

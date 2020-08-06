@@ -1,13 +1,22 @@
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page errorPage="errorPage.jsp"%> 
+    
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
 <title>Student Dashboard</title>
+
+
+
 <link href="resources/CSS/StudentDashboard.css" rel="stylesheet">
+
 </head>
+
 <body>
 <div class="header">
 		<img src="resources/images/logo.jpg" />
@@ -26,7 +35,7 @@
                 <tr>
 				<form action="viewcoursebystudent.hr">
 	            <div align="center" class="button-layout">
-				<button id="submit" type="submit" >View Course</button>
+				<button id="submit" type="submit" >View Courses</button>
 				</div>
 				</form>
 				</tr>      
@@ -37,8 +46,16 @@
 				<button id="submit" type="submit" >View Applied Course</button>
 				</div>
 				</form>
+				</tr> 
+				<br/><br/>  
+				<tr>
+				<form action="viewarchivecoursebystudent.hr">
+	            <div align="center" class="button-layout">
+				<button id="submit" type="submit" >View Archived Courses</button>
+				</div>
+				</form>
+				</tr> 
 				<br/><br/>
-				</tr>   
 				<tr>
 				<form action="searchjobbystudent.hr">
 	            <div align="center" class="button-layout">

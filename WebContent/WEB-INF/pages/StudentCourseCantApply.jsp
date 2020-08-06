@@ -18,9 +18,9 @@
 	
 	<h1 align="center">SORRY !!!</h1>
 	<h2 align="center">YOU CAN'T APPLY FOR THE COURSE</h2>
-	<h2 align="center">AS YOU ARE CURRENTLY APPLIED TO ANOTHER COURSE OR YOU HAVE ALREADY COMPLETED THIS COURSE</h2>
+	<h2 align="center">AS YOU ARE CURRENTLY APPLIED TO ANOTHER COURSE.</h2>
 	<br/><br/>
-	<h2 align="center">TRY AGAIN LATER</h2>
+	<h2 align="center">TRY AGAIN LATER AFTER COMPLETING THE CURRENT APPLIED COURSE</h2>
 	
 	
 	
